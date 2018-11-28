@@ -141,6 +141,11 @@ if index(g:bundle_group, 'basic') >= 0
 	let g:signify_vcs_cmds = {
 			\ 'git': 'git diff --no-color --diff-algorithm=histogram --no-ext-diff -U0 -- %f',
 			\}
+
+	" 平滑滚动，让<C-D>/<C-U>和<C-F>/<C-B>不再突然出现，而是出现滚动效果"
+	Plug 'yonchu/accelerated-smooth-scroll'
+	" 支持头文件和cpp文件之间快速切换
+	Plug 'vim-scripts/a.vim'
 endif
 
 
@@ -517,6 +522,9 @@ if index(g:bundle_group, 'leaderf') >= 0
 	endif
 endif
 
+" add by fujk
+"由于该插件安装耗时较长，故默认不安装
+"Plug 'Valloric/YouCompleteMe'
 
 "----------------------------------------------------------------------
 " 结束插件安装
@@ -526,7 +534,7 @@ call plug#end()
 
 
 "----------------------------------------------------------------------
-" YouCompleteMe 默认设置：YCM 需要你另外手动编译安装
+" YouCompleteMe 默认设置：YCM 需要你另外手动编译安装: cd ~/.vim/bundles/YouCompleteMe/ && ./install.py
 "----------------------------------------------------------------------
 
 " 禁用预览功能：扰乱视听
