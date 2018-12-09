@@ -25,6 +25,8 @@ set noet
 " 如果后面设置了 expandtab 那么展开 tab 为多少字符
 set softtabstop=4
 
+" 当文件类型为makefile时，关闭<Tab转空格>
+autocmd FileType make set noexpandtab  
 
 augroup PythonTab
 	au!
