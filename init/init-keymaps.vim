@@ -17,6 +17,13 @@
 
 
 "----------------------------------------------------------------------
+" 快速退出
+"----------------------------------------------------------------------
+noremap <silent> <F4>         <ESC>:q <cr>
+noremap <silent> <F3><F4>  <ESC>:wq <cr>
+
+
+"----------------------------------------------------------------------
 " INSERT 模式下使用 EMACS 键位
 "----------------------------------------------------------------------
 inoremap <c-a> <home>
@@ -240,19 +247,19 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 nnoremap <silent> <F9> :AsyncRun gcc -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
 
 " F5 运行文件
-nnoremap <silent> <F5> :call ExecuteFile()<cr>
+" nnoremap <silent> <F5> :call ExecuteFile()<cr>
 
 " F7 编译项目
 nnoremap <silent> <F7> :AsyncRun -cwd=<root> make -j$(nproc) <cr>
 
 " F8 运行项目
-nnoremap <silent> <F8> :AsyncRun -cwd=<root> -raw make run <cr>
+" nnoremap <silent> <F8> :AsyncRun -cwd=<root> -raw make run <cr>
 
 " F6 测试项目
-nnoremap <silent> <F6> :AsyncRun -cwd=<root> -raw make test <cr>
+" nnoremap <silent> <F6> :AsyncRun -cwd=<root> -raw make test <cr>
 
 " 更新 cmake
-nnoremap <silent> <F4> :AsyncRun -cwd=<root> cmake . <cr>
+" nnoremap <silent> <F4> :AsyncRun -cwd=<root> cmake . <cr>
 
 " Windows 下支持直接打开新 cmd 窗口运行
 if has('win32') || has('win64')
